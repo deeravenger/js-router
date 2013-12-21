@@ -1,3 +1,8 @@
+/**
+ * Small and simple JavaScript library for routing
+ * @author Dmitry Kuznetsov <kuznetsov2d@gmail.com>
+ * @license The MIT License (MIT)
+ */
 (function (root, factory) {
     if (typeof exports === 'object') {
         factory(exports);
