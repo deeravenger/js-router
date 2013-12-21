@@ -1,0 +1,8 @@
+{
+    "name": "router.js",
+    "version": "0.9.0",
+    "main": "router.js",
+    "ignore": [],
+    "dependencies": {},
+    "devDependencies": {}
+}
