@@ -10,7 +10,7 @@
     exports.Router = function (prefix) {
         var routes = [],
             defaultController,
-            routeClass = function (rule, controller) {
+            Route = function (rule, controller) {
                 var values;
 
                 function match(url) {
@@ -45,7 +45,7 @@
          * @returns {Router}
          */
         function when(rule, controller) {
-            routes.push(new routeClass(rule, controller));
+            routes.push(new Route(rule, controller));
             return this;
         }
 
