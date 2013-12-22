@@ -1,5 +1,5 @@
 /**
- * Small and simple JavaScript library for routing
+ * JavaScript library for client-side routing
  * @author Dmitry Kuznetsov <kuznetsov2d@gmail.com>
  * @license The MIT License (MIT)
  */
@@ -16,28 +16,28 @@
         var routes = [],
             defaultController,
             Route = function (rule, controller) {
-                var values;
+                var values = [], request = {};
 
                 function match(url) {
                     var pattern = rule
-                        .replace(/(\/)/g, '\\/')
-                        .replace(/(:\w+)/g, '([^/]+)');
+                        .replace(/(\/|\.|\+|\*|\?|\^|\$)/g, '\\$1')
+                        .replace(/(:[a-z]+)/gi, '(\\w+)');
                     pattern = new RegExp('^' + pattern + '$');
                     values = pattern.exec(url);
                     return !!values;
                 }
 
                 function run() {
-                    var request = {},
-                        keys = rule.match(/(:\w+)/g) || [];
+                    var keys = rule.match(/(:\w+|\([^)]+\))/g) || [];
                     for (var i = 0; i < keys.length; i++) {
-                        var key = keys[i].substr(1);
+                        var key = keys[i].substr(0, 1) === ':' ? keys[i].substr(1) : keys[i];
                         request[key] = values[i + 1];
                     }
-                    return controller(request);
+                    return controller.apply(this, (values || []).slice(1));
                 }
 
                 return {
+                    request: request,
                     match: match,
                     run: run
                 };
