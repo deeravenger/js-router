@@ -5,6 +5,15 @@ Small and simple JavaScript library for client-side routing.
 Router works fine in Internet Explorer >=6, Firefox >= 3, Opera, Chrome, Safari.
 This library is compatible with AMD and CommonJS modules. Also can be exported to global var.
 
+### Installing router
+```bash
+# Using jam
+jam install router
+
+# Using bower
+bower install js-router
+```
+
 ### Example
 ```javascript
 // set a prefix if needed
