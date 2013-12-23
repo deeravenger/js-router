@@ -7,7 +7,7 @@ This library is compatible with AMD and CommonJS modules. Also can be exported t
 
 ### Example
 ```javascript
-// you can set a prefix (for example '#!')
+// set a prefix if needed
 var router = new Router('!');
 router
     .when('/', function () {
@@ -18,8 +18,8 @@ router
         // name === 'john'
         // this.request === { 'name': 'john' }
     })
-    // we can use get values as arguments
-    // or we can use this.request in Route context
+    // we can get request values as arguments
+    // or we can use this.request from Route context
     .when('/hello/:name.:surname', function (name, surname) {
         // for url /hello/john.do
         // name === 'john'
