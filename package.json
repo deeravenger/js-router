@@ -1,10 +1,22 @@
 {
-    "name": "router.js",
+    "name": "router",
     "version": "0.5.0",
-    "description": "Simple router",
-    "main": "router.js",
+    "description": "Simple client-side router",
+    "keywords": ["router", "route", "routing"],
     "dependencies": {},
     "jam": {
-        "dependencies": {}
-    }
+        "dependencies": {},
+        "main": "router.js"
+    },
+    "licenses": [
+        "The MIT License"
+    ],
+    "maintainers": [
+        {
+            "name": "Dmitry Kuznetsov",
+            "email": "kuznetsov2d@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/dmkuznetsov/js-router",
+    "github": "https://github.com/dmkuznetsov/js-router"
 }

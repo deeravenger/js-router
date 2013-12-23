@@ -1,8 +1,13 @@
 {
-    "name": "router.js",
+    "name": "router",
     "version": "0.5.0",
     "main": "router.js",
-    "ignore": [],
+    "ignore": [
+        "LICENSE",
+        "README.md",
+        ".gitignore",
+        "package.json"
+    ],
     "dependencies": {},
     "devDependencies": {}
 }
