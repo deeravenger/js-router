@@ -20,7 +20,7 @@
 
                 function match(url) {
                     var pattern = rule
-                        .replace(/(\/|\.|\+|\*|\?|\^|\$)/g, '\\$1')
+                        .replace(/[-[\]{}()|?*+.,\\^$|#\s]/g, '\\$&')
                         .replace(/(:[a-z]+)/gi, '(\\w+)');
                     pattern = new RegExp('^' + pattern + '$');
                     values = pattern.exec(url);
